@@ -35,7 +35,7 @@ const Header = () => {
 
                 <li className="nav-logo">
                   <LinkScroll
-                    to="home page"
+                    to="hero"
                     offset={-100}
                     spy
                     smooth
