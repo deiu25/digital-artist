@@ -6,14 +6,14 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const NavLink = ({ title }) => (
-    <LinkScroll className="text-w1/80 text-lg font-bold uppercase tracking-wider transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5">
+    <LinkScroll className="text-w1/80 font-bold uppercase tracking-wider transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5">
       {title}
     </LinkScroll>
   );
 
   return (
     <header className="fixed left-0 z-50 w-full p-6">
-      <div className="container flex h-14 items-center max-lg:px-5 max-lg:w-[327px] max-lg:h-[72px] max-lg:rounded-3xl lg:mt-12 bg-m1/50">
+      <div className="container flex items-center rounded-3xl max-lg:px-5 bg-m1/50 max-lg:w-[327px] max-lg:h-[72px] lg:mt-12">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
           <img src="/images/logo.svg" />
         </a>
@@ -24,16 +24,16 @@ const Header = () => {
             isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none"
           )}
         >
-          <div className="items-center max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:overflow-hidden sidebar-before bg-m1/50 rounded-[32px] backdrop-blur-[10px]">
-            <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto lg:px-[120px] lg:h-[104px]">
-              <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 gap-12">
+          <div className="items-center max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:overflow-hidden sidebar-before rounded-[32px] backdrop-blur-[10px]">
+            <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto lg:h-[104px]">
+              <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 gap-12 px-12">
                 <li className="nav-li flex">
                   <NavLink title="home page" />
                   <NavLink title="portfolio" />
                   <NavLink title="about us" />
                 </li>
 
-                <li className="nav-logo">
+                <li className="px-20">
                   <LinkScroll
                     to="hero"
                     offset={-100}
@@ -52,7 +52,7 @@ const Header = () => {
                   </LinkScroll>
                 </li>
 
-                <li className="nav-li flex gap-4">
+                <li className="nav-li flex">
                   <NavLink title="inquires" />
                   <NavLink title="pricings" />
                   <NavLink title="challenges" />

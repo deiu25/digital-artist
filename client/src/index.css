@@ -23,7 +23,7 @@
   }
 
   body {
-    @apply font-satoshi text-[16px] tracking-[-0.03em] text-p5;
+    @apply font-satoshi text-[16px] text-p5;
   }
 
   a {
@@ -46,10 +46,10 @@
 @layer utilities {
   /* START of Common */
   .container {
-    @apply mx-auto max-w-[1520px] max-xl:px-10 max-lg:px-6 max-sm:px-4;
+    @apply mx-auto;
   }
   
   .nav-li {
-    @apply relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start lg:px-[52px];
+    @apply relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start;
   }
 }
