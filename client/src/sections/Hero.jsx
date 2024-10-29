@@ -23,11 +23,11 @@ const Hero = () => {
               </div>
               <div>
                 <p className="text-[24px] tracking-[-0.36px] leading-[normal] font-satoshi">
-                  <span className="mr-5 text-p1 text-lg">Mon-Fri</span>
+                  <span className="mr-5 text-p1 text-lg max-md:mr-1">Mon-Fri</span>
                   <span className="text-w1 text-lg">11:00-21:00</span>
                 </p>
                 <p className="text-[24px] tracking-[-0.36px] leading-[normal] font-satoshi">
-                  <span className="mr-5 text-p1 text-lg">Sat-Sun</span>
+                  <span className="mr-5 text-p1 text-lg max-md:mr-1">Sat-Sun</span>
                   <span className="text-w1 text-lg">14:00-20:00</span>
                 </p>
               </div>
