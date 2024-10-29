@@ -26,10 +26,14 @@ export default {
         angel: ["Angel rhapsody", "sans-serif"],  
         satoshi: ["Satoshi", "sans-serif"],  
       },
+      letterSpacing: {
+        tightest: '-1.6px',
+      },
       transitionProperty: {
         borderColor: 'border-color',
       },
       spacing: {
+        '1/12': '12%',
         '1/5': '20%',
         '2/5': '40%',
         '3/5': '60%',
@@ -52,6 +56,7 @@ export default {
         388: '388px',
         400: '400px',
         440: '440px',
+        500: '500px',
         640: '640px',
         600: '600px',
         700: '700px',

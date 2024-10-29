@@ -26,7 +26,7 @@ const Header = () => {
         >
           <div className="items-center max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:overflow-hidden sidebar-before rounded-[32px] backdrop-blur-[10px]">
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto lg:h-[104px]">
-              <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 gap-12 px-12">
+              <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 2xl:gap-12 px-12">
                 <li className="nav-li flex">
                   <NavLink title="home page" />
                   <NavLink title="partners" />

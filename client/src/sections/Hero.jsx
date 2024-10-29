@@ -3,11 +3,11 @@ import Button from "../components/Button";
 
 const Hero = () => {
   return (
-    <section className="relative lg:bg-hero-section pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32">
+    <section className="relative sm:bg-hero-section pt-32 lg:pt-40 xl:pt-48 2xl:pt-1/12 pb-[70px] px-[12%]">
       <Element name="hero">
-        <div className="mr-[200px] ml-[200px] max-lg:container max-lg:px-10">
+        <div className="flex justify-between items-center mx-auto max-w-7xl">
           <div className="relative z-2">
-            <h1 className="text-w1 text-[80px] font-normal font-angel pb-10 lg:pb-10 leading-[1] max-lg:leading-[1.1]">
+            <h1 className="text-w1 text-[80px] max-xs:text-[60px] max-2xl:text-[50px] font-normal font-angel tracking-tightest pb-10 lg:pb-10 leading-[1] max-lg:leading-[1.1]">
               Body <br /> paintings <br /> that{" "}
               <span className="text-p1">Defies</span>
               <br />
@@ -23,30 +23,36 @@ const Hero = () => {
               </div>
               <div>
                 <p className="text-[24px] tracking-[-0.36px] leading-[normal] font-satoshi">
-                  <span className="mr-5 text-p1 text-lg max-md:mr-1">Mon-Fri</span>
+                  <span className="mr-5 text-p1 text-lg max-md:mr-1">
+                    Mon-Fri
+                  </span>
                   <span className="text-w1 text-lg">11:00-21:00</span>
                 </p>
                 <p className="text-[24px] tracking-[-0.36px] leading-[normal] font-satoshi">
-                  <span className="mr-5 text-p1 text-lg max-md:mr-1">Sat-Sun</span>
+                  <span className="mr-5 text-p1 text-lg max-md:mr-1">
+                    Sat-Sun
+                  </span>
                   <span className="text-w1 text-lg">14:00-20:00</span>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="absolute top-52 left-10/20">
-            <img
-              src="/images/hero-back-img.svg"
-              className="size-600 max-lg:hidden"
-              alt="hero"
-            />
-          </div>
-          <div className="absolute top-52 left-10/20">
-            <img
-              src="/images/hero-girl.png"
-              className="size-700 max-lg:hidden"
-              alt="hero"
-            />
+          <div className="relative flex items-center justify-center max-sm:hidden">
+            <div className="relative">
+              <img
+                src="/images/hero-back-img.svg"
+                className="w-full max-w-[600px] h-auto"
+                alt="hero background"
+              />
+            </div>
+            <div className="absolute">
+              <img
+                src="/images/hero-girl.png"
+                className="w-full max-w-[700px] h-auto"
+                alt="hero girl"
+              />
+            </div>
           </div>
         </div>
       </Element>
