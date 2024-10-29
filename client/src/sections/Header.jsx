@@ -29,7 +29,7 @@ const Header = () => {
               <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 gap-12 px-12">
                 <li className="nav-li flex">
                   <NavLink title="home page" />
-                  <NavLink title="portfolio" />
+                  <NavLink title="partners" />
                   <NavLink title="about us" />
                 </li>
 

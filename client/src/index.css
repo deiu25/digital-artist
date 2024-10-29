@@ -58,4 +58,12 @@
       background-image: url('/images/hero-bg.svg');
       @apply bg-cover bg-center bg-no-repeat;
     }
+    .bg-about-section {
+      background-image: url('/images/about-bg.svg');
+      @apply bg-cover bg-center bg-no-repeat;
+    }
+    .bg-rectangle {
+      background-image: url('/images/about-rectangle.svg');
+      @apply bg-cover bg-center bg-no-repeat;
+    }
 }
