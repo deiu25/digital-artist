@@ -50,6 +50,12 @@
   }
   
   .nav-li {
-    @apply relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start;
+    @apply relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start text-lg sm:text-sm;
   }
+
+    /* Sections bg image */
+    .bg-hero-section {
+      background-image: url('/images/hero-bg.svg');
+      @apply bg-cover bg-center bg-no-repeat;
+    }
 }

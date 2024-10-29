@@ -12,8 +12,8 @@ const Header = () => {
   );
 
   return (
-    <header className="fixed left-0 z-50 w-full p-6">
-      <div className="container flex items-center rounded-3xl max-lg:px-5 bg-m1/50 max-lg:w-[327px] max-lg:h-[72px] lg:mt-12">
+    <header className="fixed left-0 z-50 w-full max-lg:p-6">
+      <div className="flex items-center mr-[200px] ml-[200px] rounded-3xl max-lg:container max-lg:px-5 bg-m1/50 max-lg:w-[327px] max-lg:h-[72px] lg:mt-12">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
           <img src="/images/logo.svg" />
         </a>
