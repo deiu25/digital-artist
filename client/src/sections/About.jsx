@@ -1,62 +1,60 @@
 import { Element } from "react-scroll";
+import clsx from "clsx";
+import { cardData } from "../constants";
+import CardArt from "../components/CardArt";
 
 const About = () => {
   return (
-    <section className="relative sm:bg-about-section pt-40 pb-40">
+    <section className="md:bg-about-section pt-22 md:pt-40 pb-40">
       <Element name="about">
-        <div className="relative bg-rectangle mx-auto max-w-screen-2xl h-auto sm:h-[800px]">
-          <div className="flex flex-col sm:flex-row justify-between sm:space-x-8">
-            {/* Stânga: Text și imaginea artistului */}
-            <div className="flex flex-col items-center">
-              <h5 className="text-w1 text-[32px] sm:text-[40px] lg:text-[64px] font-normal font-angel leading-tight pl-6 sm:pl-10">
+        <div className="relative flex flex-col md:flex-row justify-center items-center h-auto md:h-screen">
+          {/* Podul central - va fi ascuns pe ecrane mici */}
+          <div
+            className={clsx(
+              "absolute w-[600px] h-[70px] bg-p7 rounded-2xl",
+              "hidden md:block"
+            )}
+          ></div>
+
+          <div className="relative w-full mx-auto flex flex-col md:flex-row justify-between px-10 md:px-[10%] z-10 gap-10 md:gap-0">
+            {/* Div-ul lateral stânga */}
+            <div className="side-cards justify-center">
+              <h5 className="text-w1 text-[32px] mt-8 md:text-[40px] lg:text-[44px] font-normal font-angel leading-tight px-5">
                 Tailored Process <br /> will make you <br /> scream, but then{" "}
                 <br /> happy!
               </h5>
-              <img src="/images/artist.png" alt="artist" className="w-[80%] max-w-[300px] sm:max-w-none sm:h-[60%]" />
-            </div>
-
-            {/* Center: Two cards */}
-            <div className="flex flex-col items-center gap-10 sm:gap-28 space-y-8 sm:space-y-0">
-              <div className="relative w-[150%] max-w-[485px] h-[260px] sm:h-[324px] bg-white rounded-2xl shadow-lg ml-0 sm:ml-16">
+              <div className="relative w-full md:h-[100%] flex justify-center">
+                <div className="absolute inset-0 about-sm"></div>
                 <img
-                  src="/images/art1.svg"
-                  alt="art1"
-                  className="w-full h-full object-contain p-6 sm:p-8"
+                  src="/images/artist.png"
+                  alt="artist"
+                  className="relative object-cover mx-auto w-[70%] max-sm:pt-5 md:pt-8"
                 />
-                <span className="absolute bottom-6 sm:bottom-10 right-6 sm:right-10 text-black-100 text-xl sm:text-2xl font-normal font-angel tracking-wider">
-                  <span className="text-base align-bot mr-1.5">$</span>2800.00
-                </span>
-              </div>
-              <div className="relative w-[150%] max-w-[485px] h-[280px] sm:h-[368px] bg-white rounded-2xl shadow-lg ml-0 sm:ml-16">
-                <img
-                  src="/images/art2.svg"
-                  alt="art2"
-                  className="w-full h-full object-contain p-6 sm:p-8"
-                />
-                <span className="absolute bottom-6 sm:bottom-10 right-6 sm:right-10 text-black-100 text-xl sm:text-2xl font-normal font-angel tracking-wider">
-                  <span className="text-base align-bot mr-1.5">$</span>1500.00
-                </span>
               </div>
             </div>
 
-            {/* Right */}
-            <div className="flex flex-col text-white rounded-sm w-[80%] max-w-[490px] sm:w-[490px] h-auto sm:h-[388px] space-y-4 relative">
-              <div className="relative w-full h-[200px] sm:h-full">
-                <img
-                  src="/images/about-art-tatoo.png"
-                  alt="tattoo"
-                  className="w-full h-full object-cover rounded-sm"
-                />
-                <div className="absolute -bottom-2 sm:-bottom-5 w-full h-[80px] sm:h-[135px] bg-gradient-to-t from-[#1e1c17]/90 to-[#1e1c17]/15"></div>
-              </div>
-              <h5 className="text-w1 text-[32px] lg:text-[48px] sm:text-[64px] font-normal font-angel leading-tight mx-4 lg:ml-10 text-center sm:text-left">
+            {/* Div-urile din mijloc */}
+            <div className="flex-1 bg-transparent md:px-6 flex flex-col items-center gap-10 md:gap-[128px]">
+              {cardData.map(({ id, imageSrc, price }) => (
+                <CardArt key={id} imageSrc={imageSrc} price={price} />
+              ))}
+            </div>
+
+            {/* Div-ul lateral dreapta */}
+            <div className="side-cards justify-start p-0 order-3 md:order-none">
+              <img
+                src="/images/about-art-tatoo.png"
+                alt="tattoo"
+                className="w-full h-auto object-cover rounded-t-2xl"
+              />
+              <h5 className="text-w1 md:mt-12 text-[32px] lg:text-[48px] md:text-[64px] font-normal font-angel leading-tight px-10 pt-6">
                 Highest rated <br /> Tattoo Club in <br /> California
               </h5>
-              <p className="text-white/40 font-medium text-sm lg:text-base leading-[24px] sm:leading-[27px] p-4 lg:p-12 text-center sm:text-left">
-                Don’t hesitate. No one has ever regretted their tattoos! Contact
-                us now, and we’ll help you!
+              <p className="text-white/40 font-medium text-md lg:text-base leading-[24px] md:leading-[27px] px-10 pt-2">
+                Don’t hesitate. No one has ever regretted their tattoos! <br />
+                Contact us now, and we’ll help you!
               </p>
-              <button className="w-[90%] max-w-[255px] sm:w-[255px] h-[48px] sm:h-[64px] bg-p1 text-p4 uppercase py-2 sm:py-3 rounded-xl text-md lg:text-lg font-bold tracking-widest mx-auto sm:ml-10">
+              <button className="w-[50%] h-[48px] md:h-[54px] mt-5 max-md:mb-5 bg-p1 text-p4 uppercase rounded-xl text-xs sm:text-xxs lg:text-sm font-bold md:tracking-widest ml-10">
                 contact us now
               </button>
             </div>

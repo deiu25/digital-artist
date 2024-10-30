@@ -11,6 +11,7 @@ export default {
         p4: '#483524',
         p5: '#9A6434',
         p6: '#453120',
+        p7: '#1E1C17',
         s1: '#080D27',
         s2: '#0C1838',
         s3: '#334679',
@@ -28,6 +29,9 @@ export default {
       },
       letterSpacing: {
         tightest: '-1.6px',
+      },
+      fontSize: {
+        xxs: '0.625rem', 
       },
       transitionProperty: {
         borderColor: 'border-color',
