@@ -18,3 +18,20 @@ export const partnersData = [
       price: "$ 1500.00",
     },
   ];
+
+  export const projectsData = [
+    {
+      id: 1,
+      title: "Weddedone digital",
+      description: "Unlock the power of data with our advanced analytics tools.",
+      img: "/images/art1.svg",
+      page: "1/12"
+    },
+    {
+      id: 2,
+      title: "Another Project",
+      description: "Description for another project.",
+      img: "/images/art2.svg",
+      page: "2/12"
+    },
+  ];
