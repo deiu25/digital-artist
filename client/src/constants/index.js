@@ -9,12 +9,12 @@ export const partnersData = [
   export const cardData = [
     {
       id: 1,
-      imageSrc: "/images/art1.svg",
+      imageSrc: "/images/projects/art1.svg",
       price: "$ 2800.00",
     },
     {
       id: 2,
-      imageSrc: "/images/art2.svg",
+      imageSrc: "/images/projects/art2.svg",
       price: "$ 1500.00",
     },
   ];
@@ -22,16 +22,33 @@ export const partnersData = [
   export const projectsData = [
     {
       id: 1,
-      title: "Weddedone digital",
-      description: "Unlock the power of data with our advanced analytics tools.",
-      img: "/images/art1.svg",
-      page: "1/12"
+      title: "Floral Design",
+      description: "Elegant floral tattoo for nature lovers.",
+      img: "/images/projects/art1.svg",
+      link: "https://andrei-design.ro",
     },
     {
       id: 2,
-      title: "Another Project",
-      description: "Description for another project.",
-      img: "/images/art2.svg",
-      page: "2/12"
+      title: "Geometric Ink",
+      description: "Bold geometric shapes for a modern look.",
+      img: "/images/projects/proj2.jpeg",
+      link: "https://andrei-design.ro",
+    },
+    {
+      id: 3,
+      title: "Animal Spirit",
+      description: "Express your spirit with animal motifs.",
+      img: "/images/projects/art2.svg",
+      link: "https://andrei-design.ro",
+    },
+    {
+      id: 4,
+      title: "Minimal Art",
+      description: "Subtle, minimalist lines for timeless style.",
+      img: "/images/projects/proj1.jpeg",
+      link: "https://andrei-design.ro",
     },
   ];
+  
+  
+  

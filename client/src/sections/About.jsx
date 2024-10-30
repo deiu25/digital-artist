@@ -5,7 +5,7 @@ import CardArt from "../components/CardArt";
 
 const About = () => {
   return (
-    <section className="md:bg-about-section pt-22 md:pt-40 pb-40">
+    <section className="md:bg-about-section pt-22 md:pt-40 pb-20">
       <Element name="about">
         <div className="relative flex flex-col md:flex-row justify-center items-center h-auto md:h-screen">
           <div
