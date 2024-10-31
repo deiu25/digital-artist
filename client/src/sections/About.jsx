@@ -16,7 +16,6 @@ const About = () => {
           ></div>
 
           <div className="relative w-full mx-auto flex flex-col md:flex-row justify-between px-10 md:px-[10%] z-10 gap-10 md:gap-0">
-
             <div className="side-cards justify-center">
               <h5 className="text-w1 text-[32px] mt-8 md:text-[40px] lg:text-[44px] font-normal font-angel leading-tight px-5">
                 Tailored Process <br /> will make you <br /> scream, but then{" "}
@@ -26,7 +25,7 @@ const About = () => {
                 <div className="absolute inset-0 about-sm"></div>
                 <img
                   src="/images/artist.png"
-                  alt="artist"
+                  alt="Artist"
                   className="relative object-cover mx-auto w-[70%] max-sm:pt-5 md:pt-8"
                 />
               </div>
@@ -41,7 +40,7 @@ const About = () => {
             <div className="side-cards justify-start p-0 order-3 md:order-none">
               <img
                 src="/images/about-art-tatoo.png"
-                alt="tattoo"
+                alt="Tattoo Art"
                 className="w-full h-auto object-cover rounded-t-2xl"
               />
               <h5 className="text-w1 md:mt-12 text-[32px] lg:text-[48px] md:text-[64px] font-normal font-angel leading-tight px-10 pt-6">
@@ -52,7 +51,7 @@ const About = () => {
                 Contact us now, and we’ll help you!
               </p>
               <button className="w-[50%] h-[48px] md:h-[54px] mt-5 max-md:mb-5 bg-p1 text-p4 uppercase rounded-xl text-xs sm:text-xxs lg:text-sm font-bold md:tracking-widest ml-10">
-                contact us now
+                Contact Us Now
               </button>
             </div>
           </div>

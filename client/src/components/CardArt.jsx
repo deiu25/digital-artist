@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const CardArt = ({ imageSrc, price }) => {
   return (
     <div className="bg-white rounded-2xl w-full h-full flex flex-col items-center relative">
@@ -7,6 +9,11 @@ const CardArt = ({ imageSrc, price }) => {
       </span>
     </div>
   );
+};
+
+CardArt.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default CardArt;

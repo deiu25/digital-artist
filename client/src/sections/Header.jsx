@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
+import PropTypes from "prop-types";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,17 +12,22 @@ const Header = () => {
       className="text-w1/80 font-bold uppercase tracking-wider transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
       spy
       smooth
-      offset={-100} 
+      offset={-100}
     >
       {title}
     </LinkScroll>
   );
 
+  NavLink.propTypes = {
+    title: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
+  };
+
   return (
     <header className="fixed left-0 z-50 w-full max-lg:p-6">
       <div className="flex items-center mr-[200px] ml-[200px] rounded-3xl max-lg:container max-lg:px-5 bg-m1/50 max-lg:w-[327px] max-lg:h-[72px] lg:mt-12">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
-          <img src="/images/logo.svg" />
+          <img src="/images/logo.svg" alt="logo" />
         </a>
 
         <div
@@ -34,7 +40,7 @@ const Header = () => {
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto lg:h-[104px]">
               <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 2xl:gap-12 px-12">
                 <li className="nav-li flex">
-                  <NavLink title="home page" to="home" />
+                  <NavLink title="home" to="hero" />
                   <NavLink title="partners" to="partners" />
                   <NavLink title="about us" to="about" />
                 </li>
@@ -59,9 +65,9 @@ const Header = () => {
                 </li>
 
                 <li className="nav-li flex">
-                  <NavLink title="inquires" to="inquires" />
+                  <NavLink title="projects" to="projects" />
                   <NavLink title="pricings" to="pricings" />
-                  <NavLink title="challenges" to="challenges" />
+                  <NavLink title="blog" to="challenges" />
                 </li>
               </ul>
             </nav>

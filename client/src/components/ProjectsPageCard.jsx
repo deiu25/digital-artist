@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const ProjectsPageCard = ({ date, category, title, description, imageUrl, clientUrl, isVisible }) => {
   if (!isVisible) return null; 
 
@@ -31,6 +33,20 @@ const ProjectsPageCard = ({ date, category, title, description, imageUrl, client
       </div>
     </a>
   );
+};
+
+ProjectsPageCard.propTypes = {
+  date: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  clientUrl: PropTypes.string.isRequired,
+  isVisible: PropTypes.bool,
+};
+
+ProjectsPageCard.defaultProps = {
+  isVisible: true,
 };
 
 export default ProjectsPageCard;

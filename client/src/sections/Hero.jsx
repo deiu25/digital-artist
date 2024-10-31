@@ -3,11 +3,11 @@ import Button from "../components/Button";
 
 const Hero = () => {
   return (
-    <section className="relative sm:bg-hero-section pt-32 lg:pt-40 xl:pt-48 2xl:pt-1/12 pb-[70px] px-[12%]">
+    <section className="hero-section">
       <Element name="hero">
         <div className="flex justify-between items-center mx-auto max-w-7xl">
           <div className="relative z-2">
-            <h1 className="text-w1 text-[80px] max-xs:text-[60px] max-2xl:text-[50px] font-normal font-angel tracking-tightest pb-10 lg:pb-10 leading-[1] max-lg:leading-[1.1]">
+            <h1 className="hero-title">
               Body <br /> paintings <br /> that{" "}
               <span className="text-p1">Defies</span>
               <br />

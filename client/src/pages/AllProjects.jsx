@@ -1,6 +1,6 @@
-import HeaderProj from "../components/HeaderProj";
-import ProjectsPageCard from "../components/ProjectsPageCard";
-import { allprojectsData } from "../constants";
+import HeaderProj from '../components/HeaderProj';
+import ProjectsPageCard from '../components/ProjectsPageCard';
+import { allprojectsData } from '../constants';
 
 const AllProjects = () => {
   return (
@@ -11,8 +11,7 @@ const AllProjects = () => {
             My Projects
           </h1>
           <p className="text-w1 text-xl text-center mb-20">
-            Discover the latest projects, tips and user stories insights from
-            Solstice.
+            Discover the latest projects, tips and user stories insights from Solstice.
           </p>
           <div className="pb-20 mb-20 border-b border-p1">
             <HeaderProj
@@ -26,7 +25,6 @@ const AllProjects = () => {
           <h2 className="text-w1 text-5xl font-bold font-angel mb-12">
             Latest projects
           </h2>
-
           <div className="flex flex-wrap mb-8 pb-8 border-b border-p1 -mx-4">
             {allprojectsData.map((project, index) => (
               <div key={index} className="w-full md:w-1/2 lg:w-1/3 p-4">
@@ -44,13 +42,7 @@ const AllProjects = () => {
           </div>
           <div className="flex items-center justify-between flex-wrap gap-4 pb-32">
             <p className="text-w1 text-sm">
-              <span>Page</span>
-              <span> </span>
-              <span className="font-semibold">1</span>
-              <span> </span>
-              <span>of</span>
-              <span> </span>
-              <span className="font-semibold">10</span>
+              <span>Page</span> <span className="font-semibold">1</span> <span>of</span> <span className="font-semibold">10</span>
             </p>
             <div className="flex flex-wrap gap-3">
               <a className="next-prev" href="#">
