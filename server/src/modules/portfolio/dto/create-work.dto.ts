@@ -21,4 +21,8 @@ export class CreateWorkDto {
   @IsOptional()
   @IsEnum(WorkStatus)
   status?: WorkStatus;
+
+  @IsOptional()
+  @IsString()
+  imagePath?: string;
 }
