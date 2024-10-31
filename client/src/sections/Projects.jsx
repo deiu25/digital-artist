@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { projectsData } from "../constants";
 import ProjectCard from "../components/ProiectCard";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,7 +84,6 @@ const Projects = () => {
                 {projectsData[currentIndex].description}
               </p>
 
-              {/* Container pentru butoane pe aceeași linie */}
               <div className="flex gap-x-4 mt-6">
                 <a
                   className="w-[50%] h-[48px] md:h-[54px] mt-5 max-md:mb-5 bg-p1 text-p4 uppercase rounded-xl text-center text-xs sm:text-xxs lg:text-md font-bold md:tracking-widest flex items-center justify-center"
@@ -91,12 +91,12 @@ const Projects = () => {
                 >
                   See the project
                 </a>
-                <a
+                <Link
                   className="w-[50%] h-[48px] md:h-[54px] mt-5 max-md:mb-5 bg-p1 text-p4 uppercase rounded-xl text-center text-xs sm:text-xxs lg:text-md font-bold md:tracking-widest flex items-center justify-center"
-                  href="/all-projects"
+                  to="/all-projects"
                 >
                   See All Projects
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -5,8 +5,14 @@ import { Link as LinkScroll } from "react-scroll";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const NavLink = ({ title }) => (
-    <LinkScroll className="text-w1/80 font-bold uppercase tracking-wider transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5">
+  const NavLink = ({ title, to }) => (
+    <LinkScroll
+      to={to}
+      className="text-w1/80 font-bold uppercase tracking-wider transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
+      spy
+      smooth
+      offset={-100} 
+    >
       {title}
     </LinkScroll>
   );
@@ -28,9 +34,9 @@ const Header = () => {
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto lg:h-[104px]">
               <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 2xl:gap-12 px-12">
                 <li className="nav-li flex">
-                  <NavLink title="home page" />
-                  <NavLink title="partners" />
-                  <NavLink title="about us" />
+                  <NavLink title="home page" to="home" />
+                  <NavLink title="partners" to="partners" />
+                  <NavLink title="about us" to="about" />
                 </li>
 
                 <li className="px-20">
@@ -53,9 +59,9 @@ const Header = () => {
                 </li>
 
                 <li className="nav-li flex">
-                  <NavLink title="inquires" />
-                  <NavLink title="pricings" />
-                  <NavLink title="challenges" />
+                  <NavLink title="inquires" to="inquires" />
+                  <NavLink title="pricings" to="pricings" />
+                  <NavLink title="challenges" to="challenges" />
                 </li>
               </ul>
             </nav>
