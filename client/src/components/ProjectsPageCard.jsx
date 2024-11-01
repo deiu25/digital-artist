@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const ProjectsPageCard = ({ date, category, title, description, imageUrl, clientUrl, isVisible }) => {
+const ProjectsPageCard = ({ category, title, description, imageUrl, clientUrl, isVisible }) => {
   if (!isVisible) return null; 
 
   return (
@@ -15,9 +15,6 @@ const ProjectsPageCard = ({ date, category, title, description, imageUrl, client
         </div>
         <div className="py-6">
           <div className="flex flex-wrap items-center gap-3 mb-3">
-            <p className="text-w1 group-hover:text-p1 transition duration-200 text-sm">
-              {date}
-            </p>
             <div className="w-1 h-1 bg-[#B46995] rounded-full"></div>
             <div className="py-1 px-2 rounded-md bg-white border border-gray-100 text-xs font-medium text-gray-700">
               {category}
@@ -36,17 +33,12 @@ const ProjectsPageCard = ({ date, category, title, description, imageUrl, client
 };
 
 ProjectsPageCard.propTypes = {
-  date: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   clientUrl: PropTypes.string.isRequired,
   isVisible: PropTypes.bool,
-};
-
-ProjectsPageCard.defaultProps = {
-  isVisible: true,
 };
 
 export default ProjectsPageCard;

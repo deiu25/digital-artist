@@ -1,10 +1,12 @@
+import { Link as LinkScroll } from "react-scroll";
+import { Link, useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { useState } from "react";
-import { Link as LinkScroll } from "react-scroll";
 import PropTypes from "prop-types";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const NavLink = ({ title, to }) => (
     <LinkScroll
@@ -25,7 +27,7 @@ const Header = () => {
 
   return (
     <header className="fixed left-0 z-50 w-full max-lg:p-6">
-      <div className="flex items-center mr-[200px] ml-[200px] rounded-3xl max-lg:container max-lg:px-5 bg-m1/50 max-lg:w-[327px] max-lg:h-[72px] lg:mt-12">
+      <div className="flex items-center justify-between mr-[200px] ml-[200px] rounded-3xl max-lg:container max-lg:px-5 bg-m1/50 max-lg:w-[327px] max-lg:h-[72px] lg:mt-12">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
           <img src="/images/logo.svg" alt="logo" />
         </a>
@@ -38,7 +40,13 @@ const Header = () => {
         >
           <div className="items-center max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:overflow-hidden sidebar-before rounded-[32px] backdrop-blur-[10px]">
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto lg:h-[104px]">
-              <ul className="flex items-center justify-center h-full max-lg:block max-lg:space-y-5 2xl:gap-12 px-12">
+              <ul
+                className={clsx(
+                  "flex items-center justify-center h-full max-lg:block max-lg:space-y-5 2xl:gap-12 px-12",
+                  location.pathname !== "/" && "hidden max-lg:hidden"
+                )}
+              >
+
                 <li className="nav-li flex">
                   <NavLink title="home" to="hero" />
                   <NavLink title="partners" to="partners" />
@@ -46,8 +54,8 @@ const Header = () => {
                 </li>
 
                 <li className="px-20">
-                  <LinkScroll
-                    to="hero"
+                  <Link
+                    to="/"
                     offset={-100}
                     spy
                     smooth
@@ -61,7 +69,7 @@ const Header = () => {
                       height={70}
                       alt="logo"
                     />
-                  </LinkScroll>
+                  </Link>
                 </li>
 
                 <li className="nav-li flex">
@@ -70,6 +78,25 @@ const Header = () => {
                   <NavLink title="blog" to="challenges" />
                 </li>
               </ul>
+
+              {/* Afișează logo-ul centrat când nu ești pe pagina principală */}
+              {location.pathname !== "/" && (
+                <ul className="pl-[50%] pt-5 flex justify-center w-full">
+                  <li className="nav-li flex">
+                    <Link
+                      to="/"
+                      className="flex justify-center items-center"
+                    >
+                      <img
+                        src="/images/logo.svg"
+                        width={70}
+                        height={70}
+                        alt="logo"
+                      />
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </nav>
           </div>
         </div>

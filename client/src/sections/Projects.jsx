@@ -1,11 +1,33 @@
-import { useState } from "react";
-import { projectsData } from "../constants";
+import { useState, useEffect } from "react";
 import ProjectCard from "../components/ProiectCard";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll";
+import axios from "axios";
 
 const Projects = () => {
+  const [projectsData, setProjectsData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/portfolio");
+        const visibleProjects = response.data
+          .filter((project) => project.status === "visible")
+          .slice(-6);
+
+        const projectsWithFullImagePath = visibleProjects.map((project) => ({
+          ...project,
+          imagePath: `http://localhost:3000/${project.imagePath}`,
+        }));
+
+        setProjectsData(projectsWithFullImagePath);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+    fetchProjects();
+  }, []);
 
   const prevIndex =
     currentIndex === 0 ? projectsData.length - 1 : currentIndex - 1;
@@ -21,6 +43,8 @@ const Projects = () => {
     );
   };
 
+  if (projectsData.length === 0) return null;
+
   return (
     <section className="md:py-24 sm:bg-hero-section overflow-hidden">
       <Element name="projects">
@@ -35,7 +59,7 @@ const Projects = () => {
               <div className="overflow-hidden rounded-[20px] h-[236px] w-[250px] bg-white">
                 <img
                   className="object-cover w-full h-full"
-                  src={projectsData[prevIndex].img}
+                  src={projectsData[prevIndex].imagePath}
                   alt="Previous Project"
                 />
               </div>
@@ -43,7 +67,7 @@ const Projects = () => {
 
             <div className="p-10 min-h-[600px]">
               <ProjectCard
-                img={projectsData[currentIndex].img}
+                img={projectsData[currentIndex].imagePath}
                 title={projectsData[currentIndex].title}
               />
               <div className="flex flex-wrap justify-between items-center -m-2">
@@ -54,27 +78,23 @@ const Projects = () => {
                 </div>
                 {projectsData.length > 1 && (
                   <div className="w-auto p-2 flex items-center">
-                    {handlePrev && (
-                      <button onClick={handlePrev} className="p-2">
-                        <img
-                          src="/images/icons/arrow-left.svg"
-                          alt="arrow left"
-                          className="mt-1"
-                        />
-                      </button>
-                    )}
+                    <button onClick={handlePrev} className="p-2">
+                      <img
+                        src="/images/icons/arrow-left.svg"
+                        alt="arrow left"
+                        className="mt-1"
+                      />
+                    </button>
                     <span className="text-xl font-semibold">{`${
                       currentIndex + 1
                     }/${projectsData.length}`}</span>
-                    {handleNext && (
-                      <button onClick={handleNext} className="p-2">
-                        <img
-                          src="/images/icons/arrow-right.svg"
-                          alt="arrow right"
-                          className="mt-1"
-                        />
-                      </button>
-                    )}
+                    <button onClick={handleNext} className="p-2">
+                      <img
+                        src="/images/icons/arrow-right.svg"
+                        alt="arrow right"
+                        className="mt-1"
+                      />
+                    </button>
                   </div>
                 )}
               </div>
@@ -83,18 +103,21 @@ const Projects = () => {
                   {projectsData[currentIndex].title}
                 </h6>
                 <p className="text-xl text-neutral-400 min-h-[100px]">
-                  {projectsData[currentIndex].description}
+                  {projectsData[currentIndex].description.length > 30
+                    ? projectsData[currentIndex].description.slice(0, 30) +
+                      "..."
+                    : projectsData[currentIndex].description}
                 </p>
 
-                <div className="flex gap-x-4 mt-6">
+                <div className="flex gap-x-4">
                   <a
-                    className="w-[50%] h-[48px] md:h-[54px] mt-5 max-md:mb-5 bg-p1 text-p4 uppercase rounded-xl text-center text-xs sm:text-xxs lg:text-md font-bold md:tracking-widest flex items-center justify-center"
-                    href={projectsData[currentIndex].link}
+                    className="see-proj-btn"
+                    href={projectsData[currentIndex].clientUrl}
                   >
                     See the project
                   </a>
                   <Link
-                    className="w-[50%] h-[48px] md:h-[54px] mt-5 max-md:mb-5 bg-p1 text-p4 uppercase rounded-xl text-center text-xs sm:text-xxs lg:text-md font-bold md:tracking-widest flex items-center justify-center"
+                    className="see-proj-btn"
                     to="/all-projects"
                   >
                     See All Projects
@@ -107,7 +130,7 @@ const Projects = () => {
               <div className="overflow-hidden rounded-[20px] h-[236px] w-[250px] bg-white">
                 <img
                   className="object-cover w-full h-full"
-                  src={projectsData[nextIndex].img}
+                  src={projectsData[nextIndex].imagePath}
                   alt="Next Project"
                 />
               </div>

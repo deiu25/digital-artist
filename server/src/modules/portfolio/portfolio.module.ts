@@ -5,7 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Work } from './entities/work.entity';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { join } from 'path';
 
 @Module({
   imports: [

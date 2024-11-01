@@ -1,8 +1,49 @@
 import HeaderProj from '../components/HeaderProj';
 import ProjectsPageCard from '../components/ProjectsPageCard';
-import { allprojectsData } from '../constants';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 const AllProjects = () => {
+  const [projects, setProjects] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/portfolio');
+        setProjects(response.data);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      }
+    };
+    fetchProjects();
+  }, []);
+
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = projects
+    .filter((project) => project.status === 'visible')
+    .slice(indexOfFirstProject, indexOfLastProject);
+
+  // Total pagini
+  const totalPages = Math.ceil(
+    projects.filter((project) => project.status === 'visible').length /
+      projectsPerPage
+  );
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
   return (
     <section className="overflow-hidden">
       <div className="sm:bg-hero-section mt-40 px-[12%]">
@@ -26,31 +67,38 @@ const AllProjects = () => {
             Latest projects
           </h2>
           <div className="flex flex-wrap mb-8 pb-8 border-b border-p1 -mx-4">
-            {allprojectsData.map((project, index) => (
+            {currentProjects.map((project, index) => (
               <div key={index} className="w-full md:w-1/2 lg:w-1/3 p-4">
                 <ProjectsPageCard
-                  date={project.date}
-                  category={project.category}
+                  category={project.category || 'Project'}
                   title={project.title}
                   description={project.description}
-                  imageUrl={project.imageUrl}
+                  imageUrl={`http://localhost:3000/${project.imagePath}`}
                   clientUrl={project.clientUrl}
-                  isVisible={project.isVisible}
+                  isVisible={project.status === 'visible'}
                 />
               </div>
             ))}
           </div>
           <div className="flex items-center justify-between flex-wrap gap-4 pb-32">
             <p className="text-w1 text-sm">
-              <span>Page</span> <span className="font-semibold">1</span> <span>of</span> <span className="font-semibold">10</span>
+              <span>Page</span> <span className="font-semibold">{currentPage}</span> <span>of</span> <span className="font-semibold">{totalPages}</span>
             </p>
             <div className="flex flex-wrap gap-3">
-              <a className="next-prev" href="#">
+              <button
+                className="next-prev"
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+              >
                 Prev
-              </a>
-              <a className="next-prev" href="#">
+              </button>
+              <button
+                className="next-prev"
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+              >
                 Next
-              </a>
+              </button>
             </div>
           </div>
         </div>
