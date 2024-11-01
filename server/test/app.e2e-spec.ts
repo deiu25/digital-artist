@@ -1,13 +1,13 @@
-import * as request from 'supertest';
-import { Test } from '@nestjs/testing';
-import { AppModule } from '../src/app.module';
+import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
+import * as request from 'supertest';
+import { AppModule } from '../src/app.module';
 
-describe('AppController (e2e)', () => {
+describe('PortfolioController (e2e)', () => {
   let app: INestApplication;
 
   beforeAll(async () => {
-    const moduleFixture = await Test.createTestingModule({
+    const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
 
@@ -16,13 +16,25 @@ describe('AppController (e2e)', () => {
   });
 
   afterAll(async () => {
-    await app.close();
+    if (app) {
+      await app.close();
+    }
   });
 
-  it('/ (GET)', () => {
+  it('/portfolio (GET) - should return all works', () => {
     return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+      .get('/portfolio')
+      .expect(200);
+  });
+
+  it('/portfolio (POST) - should create a new work', () => {
+    return request(app.getHttpServer())
+      .post('/portfolio')
+      .send({
+        title: 'New Project',
+        description: 'Project description',
+        clientUrl: 'http://example.com',
+      })
+      .expect(201);
   });
 });
