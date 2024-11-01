@@ -1,94 +1,73 @@
-### v2.0.0
+# CHANGELOG.md
 
-###### Aug 24, 2024
+## [3.0.0] - 2024-07-05
 
-- [New] Migrate to typescript.
-- Upgrade and restructure the directory.
-- Upgrade some dependencies to the latest versions.
+- Mosaic Redesign
 
----
+## [2.1.0] - 2023-12-08
 
-### v1.8.0
+- Update Vite to 5
+- Update other dependencies
 
-###### Wed 11, 2023
+## [2.0.1] - 2023-10-04
 
-- [New] Migrate to vite.js.
-- Upgrade and restructure the directory.
-- Upgrade some dependencies to the latest versions
+- Dependencies update
 
----
+## [2.0.0] - 2023-06-01
 
-### v1.7.0
+- Dark version added
 
-###### Feb 21, 2023
+## [1.7.4] - 2023-04-11
 
-- Upgrade some dependencies to the latest versions
+- Update dependencies
 
----
+## [1.7.3] - 2023-02-13
 
-### v1.6.0
+- Further sidebar color improvements
 
-###### Oct 17, 2022
+## [1.7.2] - 2023-02-13
 
-- Upgrade and restructure the directory.
-- Upgrade some dependencies to the latest versions
+- Update dependencies
+- Improve sidebar icons color logic
 
----
+## [1.7.0] - 2022-08-30
 
-### v1.5.0
+- Update sidebar
+- Fix mobile menu issue
 
-###### Jul 04, 2022
+## [1.6.0] - 2022-07-15
 
-- Support react 18.
-- Upgrade some dependencies to the latest versions
+- Replace Sass with CSS files
+- Update dependencies
+- Update React to v18
 
----
+## [1.3.1] - 2022-01-27
 
-### v1.4.0
+- Fix tailwind.config.js file
 
-###### Apr 12, 2022
+## [1.3.0] - 2022-01-25
 
-- Update `src/components`.
-- Update `src/sections`.
-- Update `src/pages`.
-- Update `src/layouts`.
-- Update `src/theme`.
-- Upgrade some dependencies to the latest versions
+- Replace CRA (Create React App) with Vite
+- Remove Craco
+- Update dependencies
 
----
+## [1.2.0] - 2021-12-13
 
-### v1.3.0
+- Update Tailwind 3
+- Several improvements
 
-###### Feb 21, 2022
+## [1.1.1] - 2021-11-23
 
-- Support react-script v5.0.0
-- Source code improvement
-- Upgrade some dependencies to the latest versions
+- Alignment issue## [1.1.1] - 2021-11-23
 
----
+- Alignment issue
 
-### v1.2.0
+## [1.1.0] - 2021-11-15
 
-###### Sep 18, 2021
+- Update dependencies
+- Enable Tailwind JIT
+- Add expandable / collapsible sidebar feature
 
-- Support MIU v5.0.0 official release
-- Upgrade some dependencies to the latest versions
-- Update `src/theme/typography.js`
-- Upgrade some dependencies to the latest versions
+## [1.0.0] - 2021-04-20
 
----
-
-### v1.1.0
-
-###### Jul 23, 2021
-
-- Support MUI v5.0.0-beta.1
-- Upgrade some dependencies to the latest versions
-
----
-
-### v1.0.0
-
-###### Jun 28, 2021
-
-Initial release.
+First release

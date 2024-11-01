@@ -43,11 +43,16 @@ export class PortfolioController {
   }
 
   @Patch(':id')
+  @UseInterceptors(FileInterceptor('image'))
   async updateWork(
     @Param('id') id: number,
     @Body() updateWorkDto: UpdateWorkDto,
-  ): Promise<Work> {
-    return this.portfolioService.update(id, updateWorkDto);
+    @UploadedFile() image?: Express.Multer.File,
+  ) {
+    if (image) {
+      updateWorkDto.imagePath = image.path; // setează calea fișierului în DTO
+    }
+    return this.portfolioService.update(+id, updateWorkDto);
   }
 
   @Delete(':id')

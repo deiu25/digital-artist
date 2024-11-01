@@ -31,8 +31,9 @@ export class PortfolioService {
 
   async update(id: number, updateWorkDto: UpdateWorkDto): Promise<Work> {
     await this.workRepository.update(id, updateWorkDto);
-    return this.findOne(id); // Returnează lucrarea actualizată
+    return this.findOne(id);
   }
+  
 
   async remove(id: number): Promise<void> {
     await this.workRepository.delete(id);
