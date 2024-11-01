@@ -79,7 +79,6 @@ const Header = () => {
                 </li>
               </ul>
 
-              {/* Afișează logo-ul centrat când nu ești pe pagina principală */}
               {location.pathname !== "/" && (
                 <ul className="pl-[50%] pt-5 flex justify-center w-full">
                   <li className="nav-li flex">
